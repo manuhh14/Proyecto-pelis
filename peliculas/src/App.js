@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Listado } from './components/Listado';
+import { Buscador } from './components/Buscador';
+import { Crear } from './components/Crear';
 
 class App extends Component {
   render() {
@@ -9,7 +12,7 @@ class App extends Component {
           <div className="logo">
             <div className="play"></div>
           </div>
-          
+
           <h1>MisPelis</h1>
         </header>
 
@@ -27,58 +30,14 @@ class App extends Component {
         <section id="content" className="content">
 
           {/* aquí van las películas */}
-          <article className="peli-item">
-            <h3 className="title">Desarrollo web</h3>
-            <p className="description">manuelhernandez.com.edu</p>
-
-            <button className="edit">Editar</button>
-            <button className="delete">Borrar</button>
-          </article>
-
-          <article className="peli-item">
-            <h3 className="title">Desarrollo web</h3>
-            <p className="description">manuelhernandez.com.edu</p>
-
-            <button className="edit">Editar</button>
-            <button className="delete">Borrar</button>
-          </article>
-
-          <article className="peli-item">
-            <h3 className="title">Desarrollo web</h3>
-            <p className="description">manuelhernandez.com.edu</p>
-
-            <button className="edit">Editar</button>
-            <button className="delete">Borrar</button>
-          </article>
-
-          <article className="peli-item">
-            <h3 className="title">Desarrollo web</h3>
-            <p className="description">manuelhernandez.com.edu</p>
-
-            <button className="edit">Editar</button>
-            <button className="delete">Borrar</button>
-          </article>
+          <Listado />
 
         </section>
 
         {/* Barra lateral */}
         <aside className="lateral">
-          <div className="search">
-            <h3 className="title">Buscador</h3>
-            <form>
-              <input type="text" id="search_field" />
-              <button id="search">Buscar</button>
-            </form>
-          </div>
-
-          <div className="add">
-            <h3 className="title">Añadir película</h3>
-            <form>
-              <input type="text" id="title" placeholder="Título" />
-              <textarea id="description" placeholder="Descripción"></textarea>
-              <input type="submit" id="save" value="Guardar" />
-            </form>
-          </div>
+          <Buscador />
+          <Crear />
         </aside>
 
         {/* Pie de página */}
