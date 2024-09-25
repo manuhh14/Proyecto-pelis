@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { guardarEnStorage } from '../helpers/GuadarEnStorage';
 
 export const Crear = () => {
     const tituloComponente = "Añadir Pelicula";
@@ -30,16 +31,14 @@ export const Crear = () => {
 
 
         //guardar en el almacenamiento local
-        guardarEnStorage(peli);
+        guardarEnStorage("pelis", peli)
+
         //limpiar el formulario
         target.reset();
         /// alert(titulo+" "+descripcion)
     }
 
-    const guardarEnStorage = peli => {
-        //guardar pelicula en el almacenamiento local
-        localStorage.setItem('pelis', JSON.stringify([peli]))
-    }
+
 
     return (
         <div>
