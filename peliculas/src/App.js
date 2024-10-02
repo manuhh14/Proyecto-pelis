@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
 import { Listado } from './components/Listado';
 import { Buscador } from './components/Buscador';
 import { Crear } from './components/Crear';
 
-class App extends Component {
-  render() {
+const App= ()=>  {
+  
+
+  const [listadoState, setListadoState] = useState([])
+
     return (
       <div className="layout">
         {/* Cabecera */}
@@ -30,14 +33,14 @@ class App extends Component {
         <section id="content" className="content">
 
           {/* aquí van las películas */}
-          <Listado />
+          <Listado  listadoState={listadoState} setListadoState={setListadoState} />
 
         </section>
 
         {/* Barra lateral */}
         <aside className="lateral">
           <Buscador />
-          <Crear />
+          <Crear  setListadoState={setListadoState}/>
         </aside>
 
         {/* Pie de página */}
@@ -47,7 +50,7 @@ class App extends Component {
 
       </div>
     );
-  }
+  
 }
 
 export default App;
